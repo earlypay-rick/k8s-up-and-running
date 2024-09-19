@@ -1,0 +1,29 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:1-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+    },
+    "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "gruntfuggly.todo-tree",
+                "ldez.ignore-files",
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "redhat.vscode-yaml",
+                "streetsidesoftware.code-spell-checker",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "remoteEnv": {
+        "EDITOR": "code -w"
+    },
+    "runArgs": [
+        "--network=host",
+        "--cap-add=NET_ADMIN",
+        "--privileged"
+    ]
+}
